@@ -5,7 +5,7 @@ import '../model/model_class.dart';
 
 class HomeScreenController extends GetxController {
   bool hello = false;
-  List<Imagemodel>? imageList;
+  ImageModel? imageList;
 
   @override
   void onInit() {
@@ -15,8 +15,9 @@ class HomeScreenController extends GetxController {
 
   Future<void> getImageList() async {
     hello = true;
+    update(['update']);
     imageList = await HomeScreenApi.getData();
-    imageList ??= [];
+    // imageList ??= [];
     hello = false;
     update(['update']);
   }

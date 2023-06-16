@@ -22,17 +22,13 @@ Widget imageList() {
                 mainAxisSpacing: 3,
                 crossAxisSpacing: 3,
               ),
-              itemCount: controller.imageList!.length,
+              itemCount: controller.imageList!.products!.length,
               itemBuilder: (context, index) {
                 return Container(
-                  height: 100,
-                  width: double.infinity,
-                  alignment: Alignment.center,
-                  padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: NetworkImage(
-                          controller.imageList![index].thumbnailUrl!),
+                          controller.imageList!.products![index].images!.first),
                     ),
                   ),
                 );
@@ -41,3 +37,19 @@ Widget imageList() {
     },
   );
 }
+
+Widget floatingactionButtonAdd() {
+  return FloatingActionButton(onPressed: () {});
+}
+// ontainer(
+// height: 100,
+// width: double.infinity,
+// alignment: Alignment.center,
+// padding: const EdgeInsets.all(20),
+// decoration: BoxDecoration(
+// image: DecorationImage(
+// image: NetworkImage(
+// controller.imageList!.products![index].images!.first),
+// ),
+// ),
+// );
